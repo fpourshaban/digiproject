@@ -1,0 +1,35 @@
+body{
+    direction: rtl;
+}
+.container{
+    width: 90%;
+    margin:30%  auto;
+}
+.logo{
+    width: 25%;
+    color: red;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px ;
+    background-color: aliceblue;
+    margin: auto;
+
+}
+p{
+    font-size: 9px;
+}
+input{
+    width: 90%;
+    padding: 2%;
+    border-bottom: solid red 1px;
+    
+}
+input:focus {
+   outline: none;
+}
+.enter{
+    width: 95%;
+    background-color: red;
+    color: white;
+    padding: 2%;
+
+}
