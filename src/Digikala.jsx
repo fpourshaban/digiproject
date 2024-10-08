@@ -1,42 +1,28 @@
 import React, { useEffect, useState,useRef }  from 'react'
-import "./home.css"
-import {useNavigate} from 'react-router-dom'
-import Request from './Request.jsx'
-import Slideshow from './Slideshow.jsx';
+import "./css/home.css"
+import { useNavigate } from 'react-router-dom'
+import Slideshow from './Slideshow.jsx'
+import Story from './Story.jsx'
+import Paysection from './Paysection.jsx'
+import Offer from './Offer.jsx'
+import SearchBar from './SearchBar.jsx'
+import SearchResultList from './SearchResultList'
 
 
 export default function Digikala() {
-  const navigate = useNavigate();
-  const [state , setstate] = useState([]);
-  const ref = useRef(null);
-  const [isVisible,setVisible]=useState();
- 
+  
+    const navigate = useNavigate();
+    const [results, setResults] = useState([]) 
 
-    useEffect(()=>{
-      Request('https://jsonplaceholder.typicode.com/photos',setstate)
-    },[]
-    )
+    
+    const handleClick = () => {
+        navigate('/Login')
+       
+    
+    }
+   
 
-
-  const handleClick = () => {
-    navigate('/Login')
     
-  }
- 
-  const scrollRight=()=>{
-    ref.current?.scrollBy({left:30, behavior: 'smooth'});
-    
-    
-  }
-  const scrollLeft=()=>{
-    ref.current?.scrollBy({left:-30, behavior: 'smooth'});
-    
-  }
-  const showStory =()=>{
-    navigate('/Story')
-    setVisible(!isVisible); 
-  }
- 
  
   return (
     <div>
@@ -44,15 +30,20 @@ export default function Digikala() {
       <div className='header'>
         <div className='left'>
           <button> <img src="./images/R.jfif" alt="shop"   /> </button>
-          <button className='login' onClick={handleClick}>ورود/ثبت نام</button>
+          <button className='login' onClick={handleClick}>ورود| ثبت نام</button>
         </div>
         <div className='right'> 
-          <div className='logo'>دیجی کالا</div>
-          <input id="searchinput" type="text" placeholder='جستجو' />
-       
+                  <div className="logo">دیجی کالا</div>
+                  <div id="search">
+                      <SearchBar setResults={setResults} />
+                      <SearchResultList results={results} />
+                  </div>
+                  
         </div>
-        <div className='organize'>
-          <div className='goods'>دسته بندی کالاها</div>
+              <div className='organize'>
+                  <div className='goods' onClick={() => 
+                      <div> kala</div>
+                  } >دسته بندی کالاها</div>
           <div className='parts'>
             <ul>
               <li>شگفت انگیز ها</li>
@@ -66,21 +57,22 @@ export default function Digikala() {
           <div className="city">شهرخود را انتخاب کنید</div>
         </div>
       </div>
-      <div id="stories" ref={ref}>
-       {state.map(photo => (
-        <div className="story" key={photo.id} >
-        
-          <img className="post"src={photo.url} onClick={showStory}></img>
-          <p className="caption" >{photo.title}</p>
-        </div>))}
-       <button id="scrollright" onClick={scrollRight} >&rarr;</button>
-       <button id="scrollleft" onClick={scrollLeft} >&larr;</button>
-      </div>
+      <div id="container">
+        <div>
+           <Story />
+        </div>
      
-     <div id="slideshow" >
-      
-     <Slideshow />
-      
+        <div  >
+           <Slideshow />
+        </div>
+        <div>
+           <Paysection />
+        </div>
+
+        <div>
+            <Offer />
+        </div>
+
      </div>
     </div>
   )

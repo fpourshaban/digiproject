@@ -1,0 +1,155 @@
+body{
+    font-size:  20px;
+    direction:rtl;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#container{
+    width: 95%;
+    margin: auto;
+}
+img{
+    width: 20px;
+    
+}
+button{
+    background: none;
+    border:solid 1px gray;
+    border-radius: 5px;
+   
+    
+}
+
+.header{
+    width: 100%;
+    padding: 10px;
+    
+}
+.left{
+    width: 50%;
+    float: left;
+   direction: ltr;
+    
+
+}
+.right{
+    width: 50%;
+    float: right;
+    display: flex;
+
+    
+}
+.login{
+    padding: 5px;
+    margin-left: 5px;
+}
+#search{
+    flex:3;
+    position:relative;
+    padding: 4px;
+}
+#searchinput {
+    
+    border: none;
+    background-color: rgb(230, 227, 227);
+    border-radius: 5px;
+    margin-right: 10px;
+   
+}
+
+#searchResult {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color:rgb(255, 255, 255);
+    direction: ltr;
+    border-radius: 5px ;
+    border: solid 1px lightgray ;
+    border-top: none;
+    width: 95%;
+    
+    
+    
+}
+#result-item{
+    padding: 5px;
+    font-size: 15px;
+}
+.logo{
+    flex:1;
+    color: rgb(231, 28, 17);
+    font-size: 40px;
+    font-family:Arial, Helvetica, sans-serif
+    
+}
+.organize{
+    clear: both;
+    display: flex;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.goods{
+    flex:1;
+    padding: 15px;
+}
+.parts{
+    box-sizing: border-box;
+   
+    flex:11;
+    border-bottom: solid gray 2px;
+   
+}
+.parts ul li{
+    display: inline;
+    margin: 0 5px;
+    text-align: center;
+    
+}
+
+.parts ul :hover{
+    border-bottom: solid red 2px;
+}
+.city{
+    flex: 1;
+    padding: 15px;
+}
+ 
+
+#offer{
+    background-color: red;
+    flex-basis: 30%;
+    display: flex;
+     justify-content: space-between;
+    height: 200px;
+    overflow-x:auto;
+    gap:5px;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+.offerproduct{
+    background-color: white;
+    flex:1;
+    height: 70%;
+    border-radius: 5px;
+    padding: 1%;
+    text-align: center;
+    
+
+   
+}
+#offertitle{
+    width: 80%;
+    text-align: center;
+    padding: 2px;
+    font-size: 20px;
+}
+.offerpost{
+   width: 80%;
+   text-align: center;
+   
+}
+.price{
+    color: red;
+    text-align: left;
+    font-size: 14px;
+}

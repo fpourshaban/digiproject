@@ -1,26 +1,31 @@
-import React from 'react'
+//import React from 'react'
+
+import { useEffect } from "react";
+
    
-   export default function Request(url,setUrl) {
+export default function Request(url, setUrl) {
     
-    try{ 
-         fetch(url )
-           .then(response => {
-    
-             if (!response.ok) {  
-               throw new Error('Network response was not ok');  
-             }  
-             return response.json();
-           })
-           
-           .then(json =>{ 
-                     
-             setUrl(json) ;
-             console.log(json)
-             })
+       const fetchData = async () => { 
+           try {
+               const response = await fetch(url);
+
+               if (!response.ok) {
+                 throw new Error('Network response was not ok');
+               }
+               const json = await response.json();
+               
+               setUrl(json);
+                console.log(json)
+               
            }
-          catch(error){console.log('error',error)
+           catch (error) {
+               console.log('error', error)
+           }
+       };
+       if (url) {
+           fetchData();
+       }
     
-          };
      return (
        <div>Request</div>
      )

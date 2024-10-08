@@ -1,0 +1,25 @@
+#slideshow{
+     position: relative;
+    width: 100%;
+    background-color: blueviolet;
+    margin-top:10px ;
+}
+.slide{
+    width: 100%;
+    height: 300px;
+    display: block;  
+    margin: auto; 
+   
+}
+.prvbtn{
+    position: absolute;
+    bottom: 15px;
+    left:10px;
+    background-color: lightgray;
+}
+.nxtbtn{
+    position: absolute;
+    bottom: 15px;
+    right:10px;
+    background-color: lightgray;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Login.css';
+import './css/Login.css';
 
 
 export default function Login() {
@@ -22,7 +22,7 @@ export default function Login() {
   return (
     <form onSubmit={handleSubmit}>
       <div className='container'>
-        <div className='logo'>digikala</div>
+        <div className='login-logo'>digikala</div>
         <h3>ورود|ثبت نام</h3>
         <p>سلام! <br /> لطفا شماره موبایل یا ایمیل خودرا وارد کنید</p>
         <input type="text" value={state}  
